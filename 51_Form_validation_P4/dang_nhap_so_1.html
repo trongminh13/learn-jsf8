@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dang_nhap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading"> DANG KI</h3>
+            <div class="desc"></div>   
+            <div class="spacer"></div>
+            <div class="form-group">
+                <label for="fullname" class="form-label"> Ten day du</label>
+                <input id="fullname" name="fullname" class="form-control" type="text" placeholder="Nhap ten cua ban">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" class="form-control" type="email" placeholder="Nhap ten cua ban">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Mat khau</label>
+                <input id="password" name="password" class="form-control" type="password" placeholder="Nhap ten cua ban">
+                <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password_confirmation" class="form-label">Nhap lai mat khau</label>
+                <input id="password_confirmation" name="password_confirmation" class="form-control" type="password" placeholder="Nhap ten cua ban">
+                <span class="form-message"></span>
+            </div>
+       
+        <button type="submit" class="form-submit">Dang ki</button>
+ </form>
+        
+    </div>
+</body>
+
+<script src="./dang_nhap_so_1.js"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded',function()
+    {
+// mong muon cua chung ta khi su dung thu vien trong tuong
+        Validator({
+            form:'#form-1', //form action tổng
+            formGroupSelector:'.form-group', //form class từng cái nhập
+            errorSelector:'.form-message', //form cảnh báo
+            rules: [
+                Validator.isRequired('#fullname','Vui long nhap ten day du '), //nhap ten(truong bat buoc)
+                Validator.isEmail('#email'),//nhap email
+                Validator.minLength('#password_confirmation'),//nhap 
+                Validator.minLength('#password',6), //nhap password(truong bat buoc 6 ki tu) minlength la toi thieu 
+                Validator.isRequired('#password_confirmation'),
+                Validator.isConfirmed('#password_confirmation', function(){
+                    return document.query.Selector('#form-1 #password').value;
+                },'Mat khau nhap lai khong chinh xac')
+            ],
+            onSubmit: function(data)
+            {
+                console.log(data);
+            }
+        });
+    });
+</script>
+</html>

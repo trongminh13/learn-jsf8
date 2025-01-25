@@ -1,0 +1,32 @@
+{
+  "name": "2_install-expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trongminh-14a5/learn_reactjs.git"
+  },
+  "keywords": [
+    "f8",
+    "blog",
+    "nodejs"
+  ],
+  "author": "dominh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trongminh-14a5/learn_reactjs/issues"
+  },
+  "homepage": "https://github.com/trongminh-14a5/learn_reactjs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
+  }
+}

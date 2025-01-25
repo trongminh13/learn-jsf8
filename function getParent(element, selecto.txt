@@ -1,0 +1,45 @@
+function getParent(element, selector) {
+        while (element.parentElement) {
+            if (element.parentElement.matches(selector)) {
+                return element.parentElement;
+            }
+            element = element.parentElement;
+        }
+    }
+
+
+lấy form_group
+2 tham số:
+selector : ông nào là form_group
+element: lấy form value
+
+cho vòng lặp :
+kiểm tra xem  có matches có class và css selectior hay không
+
+nếu ko match thì gán the cha chinh the input
+
+
+Chức năng : HIEN THONG BAO NEU NHU BRO RA NGOAI THI NO HIEN CANH BAO CHUA NHAP THONG TIN
+
+
+/////////////////////////////////////////////////////////////////
+
+if
+--inspect
+Xu ly trong cai input , hoat dong bru hay danh chu vao
+LUU LAI CAC RULES TRONG INPUT
+
+
+Xu ly truong hop brub ra ngoai
+Xu ly khi nguoi dung nhap vao input
+/////////////////////////////////////////////////////////////////////
+
+validte: thuc hien hien ra loi va bo loi di
+
+lay rules và value nguoi dung
+
+Xu ly truong hop brub ra ngoai
+Xu ly khi nguoi dung nhap vao input
+
+chuc nang: SU LY BEN TRONG KHI MOT NGUOI DANH CHU HAY LA BRO RA NGOAI
+
